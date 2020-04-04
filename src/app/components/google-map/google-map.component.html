@@ -1,0 +1,50 @@
+<agm-map [latitude]="31.0461" [longitude]="34.8516" [zoom]="8">
+    <agm-marker *ngFor="let point of points"
+    [latitude]="point.lat"
+    [longitude]="point.long">
+        <agm-info-window>
+            <!-- <h1>This point is {{ point.queryMetadata.distance }} kilometers from the center</h1> -->
+            <!-- <h1>This point is {{ point.contact }} kilometers from the center</h1> -->
+            <h1>Date: {{ point.time }}</h1>
+            <h1>Type: {{point.type}}</h1>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
+
+
+
+
+
+
+  <!-- <agm-map [latitude]="34" [longitude]="-113" [zoom]="8">
+    <agm-marker *ngFor="let point of points | async; trackBy: trackByFn"
+    <agm-marker *ngFor="let point of points | async"
+    [latitude]="point.position.geopoint.latitude"
+    [longitude]="point.position.geopoint.longitude">
+        <agm-info-window>
+            <h1>This point is {{ point.queryMetadata.distance }} kilometers from the center</h1>
+        </agm-info-window>
+    </agm-marker>
+</agm-map> -->
+
+
+<!-- <div *ngIf="lat && lng">
+    <agm-map [latitude]="lat" [longitude]="lng">
+
+        <agm-marker 
+          *ngFor="let marker of markers"
+          [latitude]="marker.location[0]" 
+          [longitude]="marker.location[1]"
+          [iconUrl] = "https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-7/512/Glass_handle_tea_coffee_tea_cup-512.png">
+    
+            <agm-info-window>
+    
+                <h3><strong>Location Details</strong></h3>
+                    <p>You are {{marker.distance}} kilometers from this point</p>
+    
+            </agm-info-window>
+        </agm-marker>
+    
+    </agm-map>
+</div>
+ -->
