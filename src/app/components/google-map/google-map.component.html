@@ -1,12 +1,15 @@
 <agm-map [latitude]="31.0461" [longitude]="34.8516" [zoom]="8">
-    <agm-marker *ngFor="let point of points"
-    [latitude]="point.lat"
-    [longitude]="point.long">
+    <agm-marker *ngFor="let report of reports"
+    [latitude]="report.location.geopoint.latitude"
+    [longitude]="report.location.geopoint.longitude">
         <agm-info-window>
             <!-- <h1>This point is {{ point.queryMetadata.distance }} kilometers from the center</h1> -->
             <!-- <h1>This point is {{ point.contact }} kilometers from the center</h1> -->
-            <h1>Date: {{ point.time }}</h1>
-            <h1>Type: {{point.type}}</h1>
+            <!-- <h1>Date: {{report.time }}</h1> -->
+            <h1>Date: {{ report.time | time:report.time }}</h1>
+            <!-- <h1>Type: {{report.type}}</h1> -->
+            <h1>Type: {{healthStatus[report.type]}}</h1>
+            <!-- <h1>Type: {{getHealthStatus(report.type)}}</h1> -->
         </agm-info-window>
     </agm-marker>
 </agm-map>

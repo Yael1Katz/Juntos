@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GeoService } from 'src/app/services/geo.service';
+import {Report} from "../../models/report"
+import { HealthStatus } from 'src/app/enums/healthStatus';
 
 @Component({
   selector: 'app-google-map',
@@ -9,18 +11,29 @@ import { GeoService } from 'src/app/services/geo.service';
 export class GoogleMapComponent implements OnInit {
   lat: number;
   lng:number;
-  points: any;
+  reports: Array<Report>;
+  healthStatus = HealthStatus;
+
+
 
   constructor(private geo: GeoService) {
+
 
 
    }
 
   ngOnInit() {
     this.getUserLocation();
-    this.geo.hits.subscribe(hits => this.points = hits);
+    this.geo.hits.subscribe(hits => this.reports = hits);
+
 
   }
+
+
+  // getHealthStatus(healthStatus: number): string {
+  //   var healthStatusStr = this.healthStatus[healthStatus];
+  //   return healthStatusStr;
+  // }
 
   private getUserLocation(){
     if(navigator.geolocation){

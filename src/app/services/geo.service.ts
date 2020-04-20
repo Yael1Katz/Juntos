@@ -30,7 +30,7 @@ export class GeoService {
     //this.things = db.collection('things').valueChanges();
     //this.things.subscribe(console.log);
 
-    this.hits = db.collection('alerts').valueChanges();
+    this.hits = db.collection('reports').valueChanges();
     this.hits.subscribe(console.log);
 
     //this.dbRef = this.firestore.collection('alerts');

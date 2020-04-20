@@ -16,12 +16,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { GeoService } from './services/geo.service';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 
+import { TimePipe } from './pipes/time.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoogleMapComponent
+    GoogleMapComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
